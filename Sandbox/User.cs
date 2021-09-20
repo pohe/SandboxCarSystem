@@ -49,6 +49,7 @@ namespace Sandbox
         public int Reputation
         {
             get { return _reputation; }
+            set { _reputation = value; }
         }
 
 
@@ -88,8 +89,11 @@ namespace Sandbox
 
         }
 
-
-
+        public override string ToString()
+        {
+            return $"Name {_name} email {_email} address {_address} mobil number {_mobile} reviews {_reputation}";
+        }
+        
         #endregion
 
     }

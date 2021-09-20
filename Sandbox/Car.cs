@@ -18,11 +18,11 @@ namespace Sandbox
         private int _noOfPassengers;
         private int _km;
 
-        private User _user;
-        private Engine _engine;
-        private NavigationSystem _navigationSystem;
+        private User _user;  //Association
+        private Engine _engine; //Composition
+        private NavigationSystem _navigationSystem; //Composition
 
-        private Wheel _wheel;
+        private Wheel _wheel; //Aggregation
 
         //Properties
 
@@ -42,6 +42,10 @@ namespace Sandbox
             set { _regNo = value;  }
         }
 
+        public Engine Engine
+        {
+            get { return _engine; }
+        }
         //Constructors
 
         public Car(string brand, string model, string regNum, int prodYear, int numOfDoors, int numOfPassengers, int km)
@@ -53,7 +57,7 @@ namespace Sandbox
             _noOfDoors = numOfDoors;
             _noOfPassengers = numOfPassengers;
             _km = km;
-            _engine = new Engine(4, false, true, false, true);
+            _engine = new Engine(4, false, true, false, true); //Composition - fødses og dør med objetet
             _navigationSystem = new NavigationSystem();
             _wheel = new Wheel("Summer", 2, 16);
         }
@@ -65,10 +69,15 @@ namespace Sandbox
             _user = user; 
         }
 
-        public void ChangeWheel(Wheel aWheel)
+        public void ChangeWheel(Wheel aWheel)  //Aggregation - Wheel er mere uafhængigt af Car. Kan skiftet
         {
             _wheel = aWheel;
         }
 
+
+        public override string ToString()
+        {
+            return $"Car info brand:{_brand}, model:{_model}, regno:{_regNo}, {_wheel.ToString()} ";
+        }
     }
 }

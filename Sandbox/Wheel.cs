@@ -46,5 +46,10 @@ namespace Sandbox
             _size = size;
         }
         //Methods
+
+        public override string ToString()
+        {
+            return $"Wheel info season {_season} pressure {_pressure} size {_size} ";
+        }
     }
 }
