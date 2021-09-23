@@ -9,7 +9,8 @@ namespace Sandbox
     public class Car
     {
         //Instance fields - saves state
-
+        private int _id;
+        private static int _lastId = 1;
         private string _brand;
         private string _model;
         private string _regNo;
@@ -26,6 +27,11 @@ namespace Sandbox
 
         //Properties
 
+        public int Id
+        {
+            get { return _id; }
+        }
+        
         public string Brand
         {
             get { return _brand; }
@@ -50,6 +56,8 @@ namespace Sandbox
 
         public Car(string brand, string model, string regNum, int prodYear, int numOfDoors, int numOfPassengers, int km)
         {
+            _lastId =_lastId + 1;
+            _id = _lastId;
             _brand = brand;
             _model = model;
             _regNo = regNum;
