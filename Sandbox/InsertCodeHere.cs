@@ -11,16 +11,16 @@ namespace Sandbox
             //Calculator c = new Calculator();
             //int res= c.Multiply(2, 3);
 
-            int res = Calculator.Multiply(2, 3);
+            //int res = Calculator.Multiply(2, 3);
 
-            Console.WriteLine(res);
+            //Console.WriteLine(res);
 
 
             Car theCar = new Car("Skoda", "Octavia", "232323", 2015, 5, 5, 200000);
-            int theCarId = theCar.Id;
+            //int theCarId = theCar.Id;
 
             Car theCar2 = new Car("Audi", "V6", "34536", 2018, 5, 5, 30000);
-            int theCar2Id = theCar2.Id;
+            //int theCar2Id = theCar2.Id;
 
 
             //string brandName = theCar.Brand;
@@ -30,15 +30,20 @@ namespace Sandbox
             //theCar.ChangeWheel(new Wheel("Winter", 16, 2 ));
             //Console.WriteLine(theCar.ToString());
 
-            //User aUser = new User("Peter", "pele@easj.dk", 12121212, "Gade 123");
+            User aUser = new User("Peter", "pele@easj.dk", 12121212, "Gade 123");
             ////aUser.Address = "Street 123";
 
             //aUser.Reputation = 4;
             //Console.WriteLine(aUser.ToString());
 
 
-            //theCar.SetUser(aUser);
+            theCar.SetUser(aUser);
 
+            Wheel aNewWheel = new Wheel("Winter", 2.3, 16);
+            theCar2.ChangeWheel(aNewWheel);
+
+            string infoCar2 = theCar2.Wheel.ToString();
+            Console.WriteLine(infoCar2);
 
             //Wheel aWheel = new Wheel("Winter", 2.0, 16);
 

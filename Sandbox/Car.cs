@@ -18,7 +18,8 @@ namespace Sandbox
         private int _noOfDoors;
         private int _noOfPassengers;
         private int _km;
-
+        private const string _prodDate ="23-09-2021";
+        
         private User _user;  //Association
         private Engine _engine; //Composition
         private NavigationSystem _navigationSystem; //Composition
@@ -26,6 +27,11 @@ namespace Sandbox
         private Wheel _wheel; //Aggregation
 
         //Properties
+
+        //public string ProdDate
+        //{
+        //    get { return _prodDate; }
+        //}
 
         public int Id
         {
@@ -51,6 +57,11 @@ namespace Sandbox
         public Engine Engine
         {
             get { return _engine; }
+        }
+
+        public Wheel Wheel
+        {
+            get { return _wheel; }
         }
         //Constructors
 
